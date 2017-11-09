@@ -16,6 +16,11 @@ router.get('/', (req, res)=>{
 // router.post(// to do);
 
 // router.put(// to do);
+router.put('/api/burgers/:id', (req, res)=>{
+    var condition = 'id = ' + req.params.id;
+    
+    burger.update();
+});
 
 // router.delete(// to do);
 

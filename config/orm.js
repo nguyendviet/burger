@@ -13,17 +13,20 @@ var orm = {
     },
 
     // insert one
-    insert: (table, col, val, call)=>{
-        var queryStr = 'INSERT INTO' + table;
-        queryStr += '(' + column.toString() + ')';
-        queryStr += 'VALUES (' + val + ')';
-    },
+    // insert: (table, col, val, call)=>{
+    //     var queryStr = 'INSERT INTO ?? ;
+    //     queryStr += '(' + column.toString() + ')';
+    //     queryStr += 'VALUES (' + val + ')';
+    // },
 
     // update one
-    update: (table, col, val, call)=>{
-        var queryStr = 'INSERT INTO' + table;
-        queryStr += '(' + column.toString() + ')';
-        queryStr += 'VALUES (' + val + ')';
+    update: (table, val1, col, val2, call)=>{
+        var queryStr = 'UPDATE ?? SET ? WHERE ?? = ?';
+
+        connection.query(queryStr, [table, val1, col, val2], (err, res)=>{
+            if (err) throw err;
+            call(res);
+        });
     }
 };
 

@@ -2,7 +2,7 @@ var orm = require('../config/orm.js');
 
 // to do:
 var burger = {
-    all: (call) => {
+    all: (call)=>{
         orm.all('burgers', (res)=>{
             call(res);
         });
@@ -10,9 +10,11 @@ var burger = {
     // insert: () => {
     //     orm.insert();
     // },
-    // update: () => {
-    //     orm.update();
-    // }
+    update: (col, val, call)=>{
+        orm.update('burgers', 1, col, val, (res)=>{
+            call(res);
+        });
+    }
 };
 
 module.exports = burger;
