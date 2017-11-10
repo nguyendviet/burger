@@ -13,4 +13,4 @@ George Washington University Project
 Eat-Da-Vegan-Burger (the word 'vegan' is peronally added) is a restaurant app that lets users input the names of burgers they'd like to eat.
 
 ## Deployment
-* Heroku: *(pending)*
+* Heroku: [Viet - Eat Da Vegan Burger](https://viet-eat-da-vegan-burger.herokuapp.com/)
