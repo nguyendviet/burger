@@ -17,9 +17,17 @@ router.get('/', (req, res)=>{
 
 // router.put(// to do);
 router.put('/api/burgers/:id', (req, res)=>{
-    var condition = 'id = ' + req.params.id;
-    
-    burger.update();
+    var condition = req.params.id;
+
+    burger.update(condition, (result)=>{
+
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        }
+        else {
+            res.status(200).end();
+        }
+    });
 });
 
 // router.delete(// to do);

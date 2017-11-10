@@ -20,10 +20,10 @@ var orm = {
     // },
 
     // update one
-    update: (table, val1, col, val2, call)=>{
-        var queryStr = 'UPDATE ?? SET ? WHERE ?? = ?';
+    update: (table, col1, val1, col2, val2, call)=>{
+        var queryStr = 'UPDATE ?? SET ?? = ' + val1 + '  WHERE ?? = ' + val2;
 
-        connection.query(queryStr, [table, val1, col, val2], (err, res)=>{
+        connection.query(queryStr, [table, col1, col2], (err, res)=>{
             if (err) throw err;
             call(res);
         });

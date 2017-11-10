@@ -10,8 +10,8 @@ var burger = {
     // insert: () => {
     //     orm.insert();
     // },
-    update: (col, val, call)=>{
-        orm.update('burgers', 1, col, val, (res)=>{
+    update: (val, call)=>{
+        orm.update('burgers', 'devoured', 1, 'id', val, (res)=>{
             call(res);
         });
     }
