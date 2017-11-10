@@ -1,4 +1,4 @@
 INSERT INTO burgers (burger_name) VALUES 
-    ('Crispy Quinoa Burgers'), 
+    ('Crispy Quinoa Burger'), 
     ('BBQ Tofu Burger'), 
     ('Beet Burger');
