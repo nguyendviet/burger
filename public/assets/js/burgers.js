@@ -15,4 +15,26 @@ $(()=>{
       location.reload();
     });
   });
+
+  $('.add-burger').on('click', (event)=>{
+    event.preventDefault();
+
+    var burgerName = $('.burger-name').val().trim();
+
+    if (burgerName === '') {
+      return;
+    }
+    else {
+      var newBurger = {name: burgerName};
+      
+      $.ajax('/api/burgers', {
+        type: 'POST',
+        data: newBurger
+      })
+      .then(()=>{
+        console.log('new burger created');
+        location.reload();
+      });
+    }
+  });
 });

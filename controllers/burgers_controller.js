@@ -13,9 +13,13 @@ router.get('/', (req, res)=>{
     });
 });
 
-// router.post(// to do);
+router.post('/api/burgers', (req, res)=>{
+    burger.insert(req.body.name, (result)=>{
+        // send back the id of the new burger
+        res.json({id: result.insertId});
+    });
+});
 
-// router.put(// to do);
 router.put('/api/burgers/:id', (req, res)=>{
     var condition = req.params.id;
 
@@ -29,7 +33,5 @@ router.put('/api/burgers/:id', (req, res)=>{
         }
     });
 });
-
-// router.delete(// to do);
 
 module.exports = router;
