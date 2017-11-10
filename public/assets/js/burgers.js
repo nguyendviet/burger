@@ -1,7 +1,7 @@
 $(()=>{
     
   $('.devour').on('click', function(event) {
-    var id = $(this).data('id');
+    var id = $(this).data('id'); // if use this, can't use arrow function
 
     console.log('id shoud get ' + id);
 
