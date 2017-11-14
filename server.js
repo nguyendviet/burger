@@ -5,7 +5,7 @@ app.use(bParse.urlencoded({extended: true}));
 app.use(bParse.json());
 app.use(express.static('public')); // serve static content from folder public
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3306;
 
 var eHandle = require('express-handlebars');
 // Set Handlebars as the default templating engine
@@ -18,4 +18,4 @@ app.use('/', routes);
 
 app.listen(port, ()=>{
     console.log('Listening on port: ' + port);
-})
+});
