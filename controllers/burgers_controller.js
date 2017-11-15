@@ -7,8 +7,6 @@ router.get('/', (req, res)=>{
         var bugerObj = {
             burgers: data
         };
-
-        console.log(bugerObj);
         res.render('index', bugerObj);
     });
 });
